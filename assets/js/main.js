@@ -1,4 +1,4 @@
-import { projects } from './projects.js';
+import { projects } from './projects.js?v=202611151659';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -213,7 +213,7 @@ async function boot() {
   // WebGL is progressive enhancement: the site works without it.
   let scene = null;
   const canvas = $('.webgl');
-  const scenePromise = import('./scene.js')
+  const scenePromise = import('./scene.js?v=202611151659')
     .then(({ createScene }) => { scene = createScene(canvas, { reducedMotion }); })
     .catch((err) => { console.warn('WebGL disabled:', err); canvas.remove(); })
     .finally(() => { goal = Math.max(goal, 70); });

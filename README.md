@@ -69,3 +69,7 @@ Attach the original logo image and paste:
 > Also tell me the exact font you think the wordmark uses.
 
 ChatGPT's image generator outputs raster images. If it can't produce a real SVG, vectorize the PNG with a tool like vectorizer.ai or Illustrator's Image Trace (keeping gradients). Or send me the PNGs and I'll rebuild the SVG paths to match.
+
+## Cache busting
+
+CSS and JS links carry a `?v=` version (in `index.html` and in the imports at the top of `assets/js/main.js`). Bump it whenever you change those files so browsers and Cloudflare fetch the new version.
