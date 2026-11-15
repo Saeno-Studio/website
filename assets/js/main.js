@@ -18,7 +18,7 @@ function renderProjects() {
   const rows = projects.map((p, i) => `
     <li class="project" data-reveal style="--d:${i * 0.08}s">
       <a class="project__link" href="${esc(p.url)}" target="_blank" rel="noopener"
-         data-cursor="Visit" data-preview="${i}" aria-label="${esc(p.name)} — ${esc(p.category)} (opens in a new tab)">
+         aria-label="${esc(p.name)}, ${esc(p.category)} (opens in a new tab)">
         <span class="project__num">${String(i + 1).padStart(2, '0')}</span>
         <div class="project__main">
           <h3 class="project__name">${esc(p.name)}</h3>
@@ -33,55 +33,18 @@ function renderProjects() {
 
   rows.push(`
     <li class="project project--next" data-reveal>
-      <a class="project__link" href="#contact" data-cursor="Talk">
+      <a class="project__link" href="#contact">
         <span class="project__num">${String(projects.length + 1).padStart(2, '0')}</span>
         <div class="project__main">
           <h3 class="project__name">Your project</h3>
           <p class="project__summary">Have an idea that deserves to be built with care? Let’s talk.</p>
         </div>
         <span class="project__cat">Next</span>
-        <span class="project__year">—</span>
+        <span class="project__year"></span>
         <span class="project__arrow">${arrow}</span>
       </a>
     </li>`);
   list.innerHTML = rows.join('');
-}
-
-/* Floating preview that follows the cursor with inertia and skews with velocity. */
-function initPreview() {
-  const preview = $('.preview');
-  const inner = $('.preview__inner');
-  if (!preview || !finePointer) return;
-  const pos = { x: innerWidth / 2, y: innerHeight / 2 }, target = { ...pos };
-  let current = -1, visible = false;
-
-  window.addEventListener('pointermove', (e) => { target.x = e.clientX; target.y = e.clientY; }, { passive: true });
-
-  $$('[data-preview]').forEach((el) => {
-    const i = +el.dataset.preview;
-    el.addEventListener('pointerenter', () => {
-      if (current !== i) {
-        const p = projects[i];
-        inner.innerHTML = p.image
-          ? `<img src="${esc(p.image)}" alt="">`
-          : `<div class="preview__gen" style="--bg:${esc(p.tone?.[0] || '#23221F')};--fg:${esc(p.tone?.[1] || '#F2EDE4')}"><strong>${esc(p.name)}</strong><small>${esc(p.category)}</small></div>`;
-        current = i;
-      }
-      visible = true;
-      preview.classList.add('is-visible');
-    });
-    el.addEventListener('pointerleave', () => { visible = false; preview.classList.remove('is-visible'); });
-  });
-
-  (function loop() {
-    const px = pos.x, py = pos.y;
-    pos.x = lerp(pos.x, target.x, 0.12);
-    pos.y = lerp(pos.y, target.y, 0.12);
-    const vx = pos.x - px;
-    const rot = Math.max(-12, Math.min(12, vx * 0.35));
-    preview.style.transform = `translate3d(${pos.x + 40}px, ${pos.y}px, 0) rotate(${rot}deg)`;
-    requestAnimationFrame(loop);
-  })();
 }
 
 /* --------------------------------------------------------------------------
@@ -234,7 +197,6 @@ async function boot() {
   initNav();
   initCursor();
   initMagnetic();
-  initPreview();
   initParallax();
 
   const bar = $('.loader__bar span');

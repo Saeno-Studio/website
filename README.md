@@ -1,6 +1,6 @@
-# Saeno Studio — website
+# Saeno Studio website
 
-A minimal Japandi-style one-page site with a Three.js zen-garden background. It needs no build step.
+A minimal Japandi-style one-page site with a floating 3D logo in Three.js. It needs no build step.
 
 ## Run locally
 
@@ -19,17 +19,16 @@ index.html              Page markup and all copy
 favicon.svg             Logo mark (favicon)
 site.webmanifest, robots.txt
 assets/css/style.css    Japandi design system, layout, CSS animations
-assets/js/main.js       Loader, text reveals, cursor, magnetic buttons, nav, project list + hover preview
-assets/js/scene.js      Three.js: raked-sand shader, 3D logo, pebbles, dust
+assets/js/main.js       Loader, text reveals, cursor, magnetic buttons, nav, project list
+assets/js/scene.js      Three.js: 3D logo mark and drifting dust
 assets/js/projects.js   ← project list (edit this to add projects)
 assets/img/logo-mark.svg
-assets/img/projects/    Project preview images
+assets/img/projects/    Project screenshots (optional)
 ```
 
 ## Adding a project
 
 Add an object to `assets/js/projects.js` (name, url, category, year, summary, tags, image).
-Without an `image`, the site generates a preview card on hover.
 
 ## Files still needed from you
 
@@ -37,8 +36,7 @@ Without an `image`, the site generates a preview card on hover.
 |---|---|---|
 | **Logo mark (vector)** | `assets/img/logo-mark.svg` + `favicon.svg` | SVG of the "S" mark only, transparent background. The current one is a hand-made reconstruction. |
 | **Full logo (vector)** | `assets/img/logo-full.svg` | Mark + "saeno studio" + tagline, transparent background |
-| **Brand font names** | — | Which fonts the wordmark and tagline use (they look like Montserrat; the site uses Montserrat for now) |
-| **SK00R preview image** | `assets/img/projects/skoor.webp` | 1200×900 screenshot or mock-up, WebP/JPG, < 200 KB |
+| **Brand font names** | n/a | Which fonts the wordmark and tagline use (they look like Montserrat; the site uses Montserrat for now) |
 | **Other projects** | `assets/js/projects.js` | Name, URL, one-line summary, year, category, image |
 | **SK00R launch year** | `assets/js/projects.js` | Currently shows "Live" |
 | **Contact email** | `index.html` (`#contact` + JSON-LD) | Set to `hello@saeno-studio.com`. Confirm this mailbox exists |
@@ -49,7 +47,7 @@ Without an `image`, the site generates a preview card on hover.
 
 Attach the original logo image and paste:
 
-> I'm attaching my company logo, "saeno studio – Technology with purpose". Recreate it as clean, production-ready vector artwork and keep the design exactly the same. Don't redesign or "improve" it.
+> I'm attaching my company logo, "saeno studio, Technology with purpose". Recreate it as clean, production-ready vector artwork and keep the design exactly the same. Don't redesign or "improve" it.
 >
 > **The mark:** two identical leaf/drop shapes forming an "S". Each shape has one straight edge, one large rounded end and one sharp pointed corner. The top shape has a flat top edge, its rounded end on the left and its sharp point at the top-right. The bottom shape is the same shape rotated 180°: flat bottom edge, rounded end on the right, sharp point at the bottom-left. They overlap in the middle.
 >
