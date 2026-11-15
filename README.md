@@ -41,8 +41,7 @@ Without an `image`, the site generates a preview card on hover.
 | **SK00R preview image** | `assets/img/projects/skoor.webp` | 1200×900 screenshot or mock-up, WebP/JPG, < 200 KB |
 | **Other projects** | `assets/js/projects.js` | Name, URL, one-line summary, year, category, image |
 | **SK00R launch year** | `assets/js/projects.js` | Currently shows "Live" |
-| **Contact email** | `index.html` (`#contact`) | Currently the placeholder `hello@saeno.studio` |
-| **Domain** | `index.html` | For `canonical` and an absolute `og:image` URL |
+| **Contact email** | `index.html` (`#contact` + JSON-LD) | Set to `hello@saeno-studio.com`. Confirm this mailbox exists |
 | **Social share image** | `assets/img/og-image.jpg` | 1200×630 |
 | **Copy review** | `index.html` | Hero, principles, approach and services text are draft copy |
 
