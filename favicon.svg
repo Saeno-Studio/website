@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 337" role="img" aria-label="Saeno Studio">
+  <defs>
+    <path id="leaf" d="M352 0H150C60 0 15 55 15 110c0 60 55 104 145 104 65 0 102-39 122-82z"/>
+    <linearGradient id="g-top" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B09A87"/><stop offset="1" stop-color="#DCD0C3"/>
+    </linearGradient>
+    <linearGradient id="g-bottom" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8E8A84"/><stop offset="1" stop-color="#262522"/>
+    </linearGradient>
+    <linearGradient id="g-mid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8E8758"/><stop offset="1" stop-color="#6F6A43"/>
+    </linearGradient>
+    <clipPath id="clip-top"><use href="#leaf"/></clipPath>
+  </defs>
+  <use href="#leaf" fill="url(#g-top)"/>
+  <use href="#leaf" transform="rotate(180 176 168.5)" fill="url(#g-bottom)"/>
+  <g clip-path="url(#clip-top)">
+    <use href="#leaf" transform="rotate(180 176 168.5)" fill="url(#g-mid)"/>
+  </g>
+</svg>

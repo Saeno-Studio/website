@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saeno Studio — Technology with purpose</title>
+  <meta name="description" content="Saeno Studio designs and builds calm, purposeful digital products." />
+  <meta name="theme-color" content="#F2EDE4" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph (replace og-image.jpg with a 1200×630 image) -->
+  <meta property="og:title" content="Saeno Studio — Technology with purpose" />
+  <meta property="og:description" content="Calm, purposeful digital products." />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="manifest" href="site.webmanifest" />
+  <!-- TODO: set to the real domain once known -->
+  <!-- <link rel="canonical" href="https://YOUR-DOMAIN/" /> -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Saeno Studio",
+      "slogan": "Technology with purpose",
+      "logo": "assets/img/logo-mark.svg"
+    }
+  </script>
+
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" crossorigin />
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#work">Skip to content</a>
+
+  <!-- Loader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <img class="loader__mark" src="assets/img/logo-mark.svg" alt="" width="64" height="62" />
+      <div class="loader__bar"><span></span></div>
+      <div class="loader__count"><span data-count>0</span></div>
+    </div>
+  </div>
+
+  <!-- WebGL zen garden -->
+  <canvas class="webgl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Cursor -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em class="cursor__label">View</em></span></div>
+
+  <header class="nav">
+    <a class="nav__brand" href="#top" aria-label="Saeno Studio — home">
+      <img src="assets/img/logo-mark.svg" alt="" width="30" height="29" />
+      <span class="wordmark"><b>saeno</b> studio</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#work" data-magnetic><span>Work</span></a>
+      <a href="#philosophy" data-magnetic><span>Philosophy</span></a>
+      <a href="#approach" data-magnetic><span>Approach</span></a>
+      <a href="#contact" class="nav__cta" data-magnetic><span>Contact</span></a>
+    </nav>
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero" data-section="hero">
+      <div class="hero__kanji" aria-hidden="true">間</div>
+      <div class="hero__content">
+        <p class="eyebrow" data-reveal>Saeno Studio — Digital craft</p>
+        <h1 class="hero__title" data-split>
+          Technology<br /><em>with purpose.</em>
+        </h1>
+        <p class="hero__lead" data-reveal>
+          We design and build calm, considered digital products.<br class="hide-sm" />
+          Less noise, more meaning — every pixel earns its place.
+        </p>
+        <div class="hero__actions" data-reveal>
+          <a href="#work" class="btn btn--dark" data-magnetic><span>See our work</span></a>
+          <a href="#contact" class="btn btn--line" data-magnetic><span>Start a project</span></a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Product design</span><b>·</b><span>Web &amp; app development</span><b>·</b><span>Smartwatch apps</span><b>·</b><span>Brand &amp; identity</span><b>·</b><span>Digital strategy</span><b>·</b>
+        <span>Product design</span><b>·</b><span>Web &amp; app development</span><b>·</b><span>Smartwatch apps</span><b>·</b><span>Brand &amp; identity</span><b>·</b><span>Digital strategy</span><b>·</b>
+      </div>
+    </div>
+
+    <!-- Work -->
+    <section class="work" id="work" data-section="work">
+      <div class="section-head">
+        <span class="section-head__num">01</span>
+        <h2 data-split>Selected work</h2>
+        <p data-reveal>Products we built and the ideas behind them.</p>
+      </div>
+
+      <ul class="projects" data-projects>
+        <!-- Rendered from assets/js/projects.js -->
+      </ul>
+
+      <!-- Floating hover preview -->
+      <div class="preview" aria-hidden="true"><div class="preview__inner"></div></div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy" id="philosophy" data-section="philosophy">
+      <div class="section-head">
+        <span class="section-head__num">02</span>
+        <h2 data-split>Where Japan<br />meets the North</h2>
+        <p data-reveal>Three principles we build by.</p>
+      </div>
+
+      <div class="principles">
+        <article class="principle" data-reveal>
+          <span class="principle__kanji" aria-hidden="true">簡素</span>
+          <h3>Kanso</h3>
+          <p class="principle__sub">Simplicity</p>
+          <p>We remove until only the essential remains. Simple products are easier to use, to maintain and to love.</p>
+        </article>
+        <article class="principle" data-reveal>
+          <span class="principle__kanji" aria-hidden="true">間</span>
+          <h3>Ma</h3>
+          <p class="principle__sub">Meaningful space</p>
+          <p>The space between things matters. We give content room to breathe and people room to think.</p>
+        </article>
+        <article class="principle" data-reveal>
+          <span class="principle__kanji principle__kanji--latin" aria-hidden="true">lagom</span>
+          <h3>Lagom</h3>
+          <p class="principle__sub">Just enough</p>
+          <p>Not too much, not too little. Software in balance with its purpose, its users and its footprint.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="approach" id="approach" data-section="approach">
+      <div class="section-head">
+        <span class="section-head__num">03</span>
+        <h2 data-split>Our approach</h2>
+        <p data-reveal>Four quiet steps from idea to product.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step" data-reveal><span class="step__n">i</span><h3>Listen</h3><p>We start with people and the problem, not the technology.</p></li>
+        <li class="step" data-reveal><span class="step__n">ii</span><h3>Shape</h3><p>Sketch, prototype and test until the idea feels obvious.</p></li>
+        <li class="step" data-reveal><span class="step__n">iii</span><h3>Build</h3><p>Robust, fast and accessible software built to last.</p></li>
+        <li class="step" data-reveal><span class="step__n">iv</span><h3>Care</h3><p>We stay around to refine, measure and grow what we made.</p></li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" data-section="contact">
+      <p class="eyebrow" data-reveal>Have an idea?</p>
+      <h2 class="contact__title" data-split>Let’s build something<br /><em>with purpose.</em></h2>
+      <!-- TODO: replace with the studio's real contact address -->
+      <a class="contact__mail" href="mailto:hello@saeno.studio" data-magnetic data-cursor="Write"><span>hello@saeno.studio</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="wordmark"><b>saeno</b> studio</span>
+    <span class="footer__tag">Technology with purpose</span>
+    <span>© <span data-year>2026</span></span>
+  </footer>
+
+  <noscript><style>.loader{display:none}[data-reveal],[data-split]{opacity:1!important;transform:none!important}</style></noscript>
+</body>
+</html>

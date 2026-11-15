@@ -1,0 +1,8 @@
+{
+  "name": "Saeno Studio",
+  "short_name": "Saeno",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "theme_color": "#F2EDE4",
+  "background_color": "#F2EDE4",
+  "display": "standalone"
+}
